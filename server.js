@@ -41,18 +41,18 @@ app.post( '/api/v1/devcamp/bootcamps', (request, response) =>{
 })
 
 //Actualizar bootcamp
-app.put( '/api/v1/devcamp/bootcamps', (request, response) =>{
+app.put( '/api/v1/devcamp/bootcamps/:id', (request, response) =>{
     response.status(200).json({
         "sucess" : true,
-        "msg" : "Actualizando bootcamp"
+        "msg" : `Actualizando usuario con id ${ request.params.id }`
     })
 })
 
 //Eliminar bootcamp
-app.delete( '/api/v1/devcamp/bootcamps', (request, response) =>{
+app.delete( '/api/v1/devcamp/bootcamps/:id', (request, response) =>{
     response.status(200).json({
         "sucess" : true,
-        "msg" : "Eliminando bootcamp"
+        "msg" : `Eliminando usuario con id ${ request.params.id }`
     })
 })
 
@@ -84,18 +84,103 @@ app.post( '/api/v1/devcamp/cursos', (request, response) =>{
 })
 
 //Actualizar curso
-app.put( '/api/v1/devcamp/cursos', (request, response) =>{
+app.put( '/api/v1/devcamp/cursos/:id', (request, response) =>{
     response.status(200).json({
         "sucess" : true,
-        "msg" : "Actualizando curso"
+        "msg" : `Actualizando curso con id ${ request.params.id }`
     })
 })
 
 //Eliminar curso
-app.delete( '/api/v1/devcamp/cursos', (request, response) =>{
+app.delete( '/api/v1/devcamp/cursos/:id', (request, response) =>{
     response.status(200).json({
         "sucess" : true,
-        "msg" : "Eliminando curso"
+        "msg" : `Eliminando usuario con id ${ request.params.id }`
+    })
+})
+
+
+//Ruta del recurso reseñas
+
+//Obtener todos las reseñas de un bootcamp
+app.get( '/api/v1/devcamp/resenias/bootcamp', (request, response) =>{
+    response.status(200).json({
+        "sucess" : true,
+        "msg" : "Aqui van a mostrarse todos las reseñas de un bootcamp"
+    })
+})
+
+//Obtener todos las reseñas
+app.get( '/api/v1/devcamp/resenias', (request, response) =>{
+    response.status(200).json({
+        "sucess" : true,
+        "msg" :  "Aqui van a mostrarse todos las reseñas"
+    })
+})
+
+//Crear reseña
+app.post( '/api/v1/devcamp/resenias', (request, response) =>{
+    response.status(200).json({
+        "sucess" : true,
+        "msg" : "Creando reseña"
+    })
+})
+
+//Actualizar reseña
+app.put( '/api/v1/devcamp/resenias/:id', (request, response) =>{
+    response.status(200).json({
+        "sucess" : true,
+        "msg" : `Actualizando reseña con id ${ request.params.id }`
+    })
+})
+
+//Eliminar reseña
+app.delete( '/api/v1/devcamp/resenias/:id', (request, response) =>{
+    response.status(200).json({
+        "sucess" : true,
+        "msg" : `Actualizando reseña con id ${ request.params.id }`
+    })
+})
+
+//Ruta del recurso usuario
+
+//Obtener todos los usuarios
+app.get( '/api/v1/devcamp/usuarios', (request, response) =>{
+    response.status(200).json({
+        "sucess" : true,
+        "msg" : "Aqui van a mostrarse todos los usuarios"
+    })
+})
+
+//Obtener usuario por id
+app.get( '/api/v1/devcamp/usuarios/:id', (request, response) =>{
+    response.status(200).json({
+        "sucess" : true,
+        "msg" :  `Aqui van a mostrarse el usuario por id ${ request.params.id }` 
+    })
+})
+
+//Crear usuario
+app.post( '/api/v1/devcamp/usuarios', (request, response) =>{
+    response.status(200).json({
+        "sucess" : true,
+        "msg" : "Creando usuario"
+    })
+})
+
+//Actualizar usuario
+app.put( '/api/v1/devcamp/usuarios/:id', (request, response) =>{
+    response.status(200).json({
+        "sucess" : true,
+        "msg" : `Actualizando usuario con id ${ request.params.id }`
+    })
+})
+
+//Eliminar usuario
+app.delete( '/api/v1/devcamp/usuarios/:id', (request, response) =>{
+    response.status(200).json({
+        "sucess" : true,
+        "msg" : `Eliminando usuario con id ${ request.params.id }`
     })
 })
 
