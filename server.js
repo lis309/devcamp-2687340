@@ -103,7 +103,7 @@ app.delete( '/api/v1/devcamp/cursos/:id', (request, response) =>{
 //Ruta del recurso reseñas
 
 //Obtener todos las reseñas de un bootcamp
-app.get( '/api/v1/devcamp/resenias/bootcamp', (request, response) =>{
+app.get( '/api/v1/devcamp/review/bootcamp', (request, response) =>{
     response.status(200).json({
         "sucess" : true,
         "msg" : "Aqui van a mostrarse todos las reseñas de un bootcamp"
@@ -111,7 +111,7 @@ app.get( '/api/v1/devcamp/resenias/bootcamp', (request, response) =>{
 })
 
 //Obtener todos las reseñas
-app.get( '/api/v1/devcamp/resenias', (request, response) =>{
+app.get( '/api/v1/devcamp/review', (request, response) =>{
     response.status(200).json({
         "sucess" : true,
         "msg" :  "Aqui van a mostrarse todos las reseñas"
@@ -119,7 +119,7 @@ app.get( '/api/v1/devcamp/resenias', (request, response) =>{
 })
 
 //Crear reseña
-app.post( '/api/v1/devcamp/resenias', (request, response) =>{
+app.post( '/api/v1/devcamp/review', (request, response) =>{
     response.status(200).json({
         "sucess" : true,
         "msg" : "Creando reseña"
@@ -127,7 +127,7 @@ app.post( '/api/v1/devcamp/resenias', (request, response) =>{
 })
 
 //Actualizar reseña
-app.put( '/api/v1/devcamp/resenias/:id', (request, response) =>{
+app.put( '/api/v1/devcamp/review/:id', (request, response) =>{
     response.status(200).json({
         "sucess" : true,
         "msg" : `Actualizando reseña con id ${ request.params.id }`
@@ -135,7 +135,7 @@ app.put( '/api/v1/devcamp/resenias/:id', (request, response) =>{
 })
 
 //Eliminar reseña
-app.delete( '/api/v1/devcamp/resenias/:id', (request, response) =>{
+app.delete( '/api/v1/devcamp/review/:id', (request, response) =>{
     response.status(200).json({
         "sucess" : true,
         "msg" : `Actualizando reseña con id ${ request.params.id }`
