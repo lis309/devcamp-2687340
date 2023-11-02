@@ -1,14 +1,15 @@
-//Traer dependencias
+//Traer dependencias del proyecto
 const express = require('express')
 const dotenv = require('dotenv')
+const colors = require('colors')
 
-//Traer las rutas
-const bootcampRoutes = require('./rutas/bootcamps')
-const cursosRoutes = require('./rutas/courses')
-const reviewRoutes = require('./rutas/reviews')
-const usersRoutes = require('./rutas/users')
-//Traer la conexión
-const connectDB = require('./config/db')
+//Traer las dependencias de las rutas
+const bootcampRoutes = require('./routes/bootcampsRoutes')
+const cursosRoutes = require('./routes/coursesRoutes')
+const reviewRoutes = require('./routes/reviewsRoutes')
+const usersRoutes = require('./routes/usersRoutes')
+//Traer dependencia conexión
+const conectarDB = require('./config/db')
 
 //Conexión a base de datos mongo
 //Traer variables de entorno 
@@ -17,13 +18,17 @@ dotenv.config({
     path: './config/.env'
 })
 
-connectDB()
+//Conectar a bd
+conectarDB()
 
 //Crear el servidor express
 const app = express()
 
+//Habilitar express para recibir body en formato json
+app.use(express.json())
+
 app.listen( process.env.PORT, () =>{
-    console.log(`Servidor ejecutando en puerto: ${ process.env.PORT }`.bgCyan.red.rainbow);
+    console.log(`Servidor express ejecutando ${ process.env.PORT }`.bgCyan.yellow);
 })
 
 //Vincular rutas al objeto app
